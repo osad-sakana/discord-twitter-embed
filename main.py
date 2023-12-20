@@ -30,6 +30,7 @@ async def on_message(message):
   
   # Helloメッセージ
   if message.content == "/kururi":
+    print(f"Kururiコマンドを検知: {message.content}")
     await message.channel.send(
       "Kururiコマンドを使ってくれてありがとう！　ぼくはくるりんだよ！　よろしくね！",
       reference = message,
@@ -37,6 +38,7 @@ async def on_message(message):
   
   # TwitterのURLを埋め込める形に変更する
   if "x.com" in message.content:
+    print(f"Twitterのリンクを検知: {message.content}")
     output = message.content.replace("x.com", "vxtwitter.com")
     await message.channel.send(
       output,
